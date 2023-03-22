@@ -24,8 +24,10 @@ def encoder(password):
 
 
 def decoder(encode):
+    # decode encoded password back to original 
     decoded = ""
     for element in encode:
+        # subtracts 3 from each element and adds to decoded string
         if int(element) >= 3:
             element = str(int(element) - 3)
         elif int(element) == 0:
@@ -35,7 +37,7 @@ def decoder(encode):
         elif int(element) == 2:
             element = "9"
         decoded += element
-    return decoded
+    return decoded                  # returns decoded string
 
 
 if __name__ == '__main__':
@@ -48,6 +50,7 @@ if __name__ == '__main__':
             encoded = encoder(choice2)
             print("Your password has been encoded and stored!")
         elif choice == 2:
+            # print encoded and decoded password 
             print(f"The encoded password is {encoded}, and the original password is {decoder(encoded)}")
         elif choice == 3:
             going = False
